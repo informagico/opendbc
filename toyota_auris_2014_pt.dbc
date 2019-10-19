@@ -86,9 +86,8 @@ BO_ 836 PRE_COLLISION_2: 8 DSU
  SG_ CHECKSUM : 63|8@0+ (1,0) [0|0] "" XXX
 
 BO_ 921 PCM_CRUISE_SM: 8 XXX
- SG_ MAIN_ON : 4|1@0+ (1,0) [0|1] "" XXX
+ SG_ MAIN_ON : 12|1@0+ (1,0) [0|1] "" XXX
  SG_ CRUISE_CONTROL_STATE : 11|4@0+ (1,0) [0|15] "" XXX
- SG_ DISTANCE_LINES : 14|2@0+ (1,0) [0|3] "" XXX
  SG_ UI_SET_SPEED : 31|8@0+ (1,0) [0|255] "" XXX
 
 BO_ 951 ESP_CONTROL: 8 ESP
@@ -188,6 +187,7 @@ CM_ SG_ 37 STEER_FRACTION "1/15th of the signal STEER_ANGLE, which is 1.5 deg; n
 CM_ SG_ 37 STEER_RATE "factor is tbd";
 CM_ SG_ 608 STEER_TORQUE_DRIVER "driver torque";
 CM_ SG_ 608 STEER_OVERRIDE "set when driver torque exceeds a certain value";
+CM_ SG_ 610 LKA_STATE "0 value, not in range, TBD";
 CM_ SG_ 610 TYPE "seems 1 on Corolla, 0 on all others";
 CM_ SG_ 643 COUNTER "only used on cars that use this msg for cruise control";
 CM_ SG_ 643 BRAKE_STATUS "only used on cars that use this msg for cruise control";
@@ -215,7 +215,7 @@ VAL_ 548 BRAKE_PRESSED 0 "not pressed" 1 "pressed";
 VAL_ 610 IPAS_STATE 5 "override" 3 "enabled" 1 "disabled";
 VAL_ 610 LKA_STATE 25 "temporary_fault" 9 "temporary_fault2" 5 "active" 1 "standby";
 VAL_ 643 STATE 0 "normal" 1 "adaptive_cruise_control" 3 "emergency_braking";
-VAL_ 921 CRUISE_CONTROL_STATE 2 "disabled" 11 "hold" 10 "hold_waiting_user_cmd" 6 "enabled" 5 "faulted";
+VAL_ 921 CRUISE_CONTROL_STATE 0 "disabled" 2 "enabled";
 VAL_ 956 GEAR 0 "D" 1 "S" 8 "N" 16 "R" 32 "P";
 VAL_ 1042 LDA_ALERT 3 "hold with continuous beep" 2 "LDA unavailable" 1 "hold" 0 "none";
 VAL_ 1042 BARRIERS 3 "both" 2 "right" 1 "left" 0 "none";
