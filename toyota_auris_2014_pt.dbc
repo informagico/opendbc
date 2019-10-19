@@ -55,10 +55,10 @@ BO_ 180 SPEED: 8 XXX
  SG_ SPEED : 47|16@0+ (0.01,0) [0|250] "kph" XXX
  SG_ CHECKSUM : 63|8@0+ (1,0) [0|255] "" XXX
 
-BO_ 548 BRAKE_MODULE: 8 XXX
- SG_ BRAKE_PRESSURE : 43|12@0+ (1,0) [0|4047] "" XXX
+BO_ 548 BRAKE: 8 XXX
  SG_ BRAKE_PRESSED : 5|1@0+ (1,0) [0|1] "" XXX
-
+ SG_ BRAKE_AMOUNT : 47|8@0+ (1,0) [0|255] "" XXX
+ 
 BO_ 560 BRAKE_MODULE2: 7 XXX
  SG_ BRAKE_PRESSED : 26|1@0+ (1,0) [0|1] "" XXX
 
@@ -183,9 +183,10 @@ BO_ 1568 SEATS_DOORS: 8 XXX
 BO_ 1570 LIGHT_STALK: 8 SCM
  SG_ AUTO_HIGH_BEAM : 37|1@0+ (1,0) [0|1] "" XXX
 
-CM_ SG_ 36 ACCEL_Y "unit is tbd";
-CM_ SG_ 36 YAW_RATE "verify";
-CM_ SG_ 36 STEERING_TORQUE "does not seem the steer torque, tbd";
+CM_ SG_ 36 ACCEL_Y "does not seems to be Y accel, TBD";
+CM_ SG_ 36 YAW_RATE "seems true";
+CM_ SG_ 36 STEERING_TORQUE "definitely not the steering torque, TBD";
+CM_ SG_ 37 STEER_ANGLE "positive is left, negative is right";
 CM_ SG_ 37 STEER_FRACTION "1/15th of the signal STEER_ANGLE, which is 1.5 deg; note that 0x8 is never set";
 CM_ SG_ 37 STEER_RATE "factor is tbd";
 CM_ SG_ 548 BRAKE_PRESSURE "seems prop to pedal force";
