@@ -58,9 +58,6 @@ BO_ 180 SPEED: 8 XXX
 BO_ 548 BRAKE: 8 XXX
  SG_ BRAKE_PRESSED : 5|1@0+ (1,0) [0|1] "" XXX
  SG_ BRAKE_AMOUNT : 47|8@0+ (1,0) [0|255] "" XXX
- 
-BO_ 560 BRAKE_MODULE2: 7 XXX
- SG_ BRAKE_PRESSED : 26|1@0+ (1,0) [0|1] "" XXX
 
 BO_ 608 STEER_TORQUE_SENSOR: 8 XXX
  SG_ STEER_TORQUE_EPS : 47|16@0- (1.0,0) [-20000|20000] "" XXX
@@ -189,9 +186,6 @@ CM_ SG_ 36 STEERING_TORQUE "definitely not the steering torque, TBD";
 CM_ SG_ 37 STEER_ANGLE "positive is left, negative is right";
 CM_ SG_ 37 STEER_FRACTION "1/15th of the signal STEER_ANGLE, which is 1.5 deg; note that 0x8 is never set";
 CM_ SG_ 37 STEER_RATE "factor is tbd";
-CM_ SG_ 548 BRAKE_PRESSURE "seems prop to pedal force";
-CM_ SG_ 548 BRAKE_POSITION "seems proportional to pedal displacement, unclear the max value of 0x1c8";
-CM_ SG_ 560 BRAKE_PRESSED "another brake pressed?";
 CM_ SG_ 608 STEER_TORQUE_DRIVER "driver torque";
 CM_ SG_ 608 STEER_OVERRIDE "set when driver torque exceeds a certain value";
 CM_ SG_ 610 TYPE "seems 1 on Corolla, 0 on all others";
@@ -217,6 +211,7 @@ CM_ SG_ 1163 OVSPVALM "-5 at start then 5 after 2 seconds";
 CM_ SG_ 1163 OVSPVALH "-5 at start then 10 after 2 seconds";
 CM_ SG_ 1163 TSRSPU "always 1";
 
+VAL_ 548 BRAKE_PRESSED 0 "not pressed" 1 "pressed";
 VAL_ 610 IPAS_STATE 5 "override" 3 "enabled" 1 "disabled";
 VAL_ 610 LKA_STATE 25 "temporary_fault" 9 "temporary_fault2" 5 "active" 1 "standby";
 VAL_ 643 STATE 0 "normal" 1 "adaptive_cruise_control" 3 "emergency_braking";
